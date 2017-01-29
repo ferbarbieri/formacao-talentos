@@ -155,6 +155,7 @@
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TreinamentoController.cs" />
+    <Compile Include="Controllers\TrilhaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +215,8 @@
     <Content Include="Views\Curso\Pesquisar.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Treinamento\Index.cshtml" />
+    <Content Include="Views\Trilha\Index.cshtml" />
+    <Content Include="Views\Trilha\Criar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

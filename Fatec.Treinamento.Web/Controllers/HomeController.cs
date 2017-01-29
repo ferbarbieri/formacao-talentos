@@ -1,4 +1,5 @@
 ﻿using Fatec.Treinamento.Data.Repositories;
+using Fatec.Treinamento.Model;
 using System.Web.Mvc;
 
 namespace Fatec.Treinamento.Web.Controllers
@@ -8,6 +9,7 @@ namespace Fatec.Treinamento.Web.Controllers
         public ActionResult Index()
         {
             return View();
+            
         }
 
         public PartialViewResult MenuAssuntos()

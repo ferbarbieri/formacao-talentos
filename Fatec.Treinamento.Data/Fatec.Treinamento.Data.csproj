@@ -46,8 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TrilhaRepository.cs" />
     <Compile Include="Repositories\CursoRepository.cs" />
     <Compile Include="Repositories\Interfaces\ICursoRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ITrilhaRepository.cs" />
     <Compile Include="Repositories\PerfilRepository.cs" />
     <Compile Include="Repositories\AssuntoRepository.cs" />
     <Compile Include="Repositories\Base\RepositoryBase.cs" />

@@ -47,6 +47,7 @@
     <Compile Include="Assunto.cs" />
     <Compile Include="Extensoes\StringExtensions.cs" />
     <Compile Include="Perfil.cs" />
+    <Compile Include="Trilha.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
