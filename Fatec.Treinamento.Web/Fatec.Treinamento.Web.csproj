@@ -217,6 +217,8 @@
     <Content Include="Views\Treinamento\Index.cshtml" />
     <Content Include="Views\Trilha\Index.cshtml" />
     <Content Include="Views\Trilha\Criar.cshtml" />
+    <Content Include="Views\Trilha\Editar.cshtml" />
+    <Content Include="Views\Trilha\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

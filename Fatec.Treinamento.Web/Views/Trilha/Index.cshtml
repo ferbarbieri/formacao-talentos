@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Fatec.Treinamento.Model.Trilha>
 
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "Trilhas";
 }
 
-<h2>Viewaaaa</h2>
+<h2>Trilhas</h2>
 
 <p>
-    @Html.ActionLink("Nova Trilha", "Criar")
+    <a href="@Url.Action("Criar")" class="btn btn-primary">Nova Trilha</a>
 </p>
 <table class="table">
     <tr>
@@ -30,7 +30,8 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.Id })
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.Id }) |
+
         </td>
     </tr>
 }

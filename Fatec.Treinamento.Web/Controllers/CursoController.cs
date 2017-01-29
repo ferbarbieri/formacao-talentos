@@ -22,5 +22,6 @@ namespace Fatec.Treinamento.Web.Controllers
 
             return View(lista);
         }
+        
     }
 }

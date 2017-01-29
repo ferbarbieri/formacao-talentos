@@ -41,5 +41,49 @@ namespace Fatec.Treinamento.Web.Controllers
             
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Editar(int id)
+        {
+            using (var repo = new TrilhaRepository())
+            {
+                var trilha = repo.Obter(id);
+
+                return View(trilha);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Trilha trilha)
+        {
+            using (var repo = new TrilhaRepository())
+            {
+                trilha = repo.Atualizar(trilha);
+
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Excluir(int id)
+        {
+            using (var repo = new TrilhaRepository())
+            {
+                var trilha = repo.Obter(id);
+
+                return View(trilha);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Excluir(Trilha trilha)
+        {
+            using (var repo = new TrilhaRepository())
+            {
+                repo.Excluir(trilha);
+
+                return RedirectToAction("Index");
+            }
+        }
+
     }
 }
