@@ -101,10 +101,39 @@ namespace Fatec.Treinamento.Data.Repositories
         
         public void Excluir(Trilha trilha)
         {
-            Connection.Execute(
-                "DELETE FROM Trilha WHERE Id = @Id",
-                param: new { Id = trilha.Id }
-            );
+            var trans = Connection.BeginTransaction();
+
+            try
+            {
+
+                // primeiro exclui os cursos daquela trilha na tabela de relacionamento
+                Connection.Execute(
+                   "DELETE FROM Trilha_Curso WHERE IdTrilha = @Id",
+                   param: new { Id = trilha.Id },
+                   transaction: trans
+               );
+
+
+                // Agora exclui a trilha
+                Connection.Execute(
+                   "DELETE FROM Trilha WHERE Id = @Id",
+                   param: new { Id = trilha.Id },
+                   transaction: trans
+               );
+                
+                // deu certo, faz commit da transação.
+                trans.Commit();
+            }
+            catch
+            {
+                trans.Rollback();// caso de erro, reverte a transação e lança o erro
+                throw;
+            }
+            finally
+            {
+                // Finaliza a transação
+                trans.Dispose();
+            }
         }
 
         /// <summary>

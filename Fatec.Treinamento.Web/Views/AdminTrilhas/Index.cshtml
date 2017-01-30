@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Fatec.Treinamento.Model.Trilha>
+
+@{
+    ViewBag.Title = "Trilhas";
+}
+
+<h2>Trilhas</h2>
+
+<p>
+    <a href="@Url.Action("Criar")" class="btn btn-primary">Nova Trilha</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativa)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.Id }) |
+            @Html.ActionLink("Cursos da Trilha", "VincularCursos", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

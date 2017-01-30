@@ -152,10 +152,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\TrilhaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TreinamentoController.cs" />
-    <Compile Include="Controllers\TrilhaController.cs" />
+    <Compile Include="Controllers\AdminTrilhasController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,10 +218,11 @@
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Treinamento\Index.cshtml" />
     <Content Include="Views\Trilha\Index.cshtml" />
-    <Content Include="Views\Trilha\Criar.cshtml" />
-    <Content Include="Views\Trilha\Editar.cshtml" />
-    <Content Include="Views\Trilha\Excluir.cshtml" />
-    <Content Include="Views\Trilha\VincularCursos.cshtml" />
+    <Content Include="Views\AdminTrilhas\Criar.cshtml" />
+    <Content Include="Views\AdminTrilhas\Editar.cshtml" />
+    <Content Include="Views\AdminTrilhas\Excluir.cshtml" />
+    <Content Include="Views\AdminTrilhas\Index.cshtml" />
+    <Content Include="Views\AdminTrilhas\VincularCursos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
