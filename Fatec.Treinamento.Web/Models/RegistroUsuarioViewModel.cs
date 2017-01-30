@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+using Fatec.Treinamento.Model;
 
 namespace Fatec.Treinamento.Web.Models
 {
@@ -29,7 +31,13 @@ namespace Fatec.Treinamento.Web.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar Senha")]
-        [Compare("Senha", ErrorMessage = "A senha e confirmação não coincidem")]
+        [System.ComponentModel.DataAnnotations.Compare("Senha", ErrorMessage = "A senha e confirmação não coincidem")]
         public string ConfirmacaoSenha { get; set; }
+
+        public IEnumerable<SelectListItem> ListaPerfil { get; set; }
+
+        public int IdPerfil { get; set; }
+        
+
     }
 }

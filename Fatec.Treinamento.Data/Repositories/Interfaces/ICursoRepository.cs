@@ -10,7 +10,8 @@ namespace Fatec.Treinamento.Data.Repositories.Interfaces
     public interface ICursoRepository 
     {
         IEnumerable<DetalhesCurso> ListarCursosPorNome(string nome);
-        
-        
+
+        IEnumerable<DetalhesCurso> ListarCursosDetalhes();
+
     }
 }

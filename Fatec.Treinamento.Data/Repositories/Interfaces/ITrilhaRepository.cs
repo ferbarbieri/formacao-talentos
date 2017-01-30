@@ -10,6 +10,6 @@ namespace Fatec.Treinamento.Data.Repositories.Interfaces
     public interface ITrilhaRepository : 
         ICrudRepository<Trilha>
     {
-
+        void AtualizarCursos(int idTrilha, int[] cursos);
     }
 }

@@ -31,7 +31,7 @@
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
             @Html.ActionLink("Excluir", "Excluir", new { id=item.Id }) |
-
+            @Html.ActionLink("Cursos da Trilha", "VincularCursos", new { id = item.Id })
         </td>
     </tr>
 }

@@ -24,9 +24,24 @@ namespace Fatec.Treinamento.Web.Controllers
         [HttpGet]
         public ActionResult Registrar()
         {
-            return View();
-        }
 
+            RegistroUsuarioViewModel model = new RegistroUsuarioViewModel();
+
+            using (var repo = new PerfilRepository())
+            {
+                var lista = repo.Listar();
+                model.ListaPerfil = (from x in lista
+                    select new SelectListItem
+                    {
+                        Text = x.Nome,
+                        Value = x.Id.ToString()
+                    });
+            }
+
+            return View(model);
+
+        }
+        
         
         [HttpPost]
         [AllowAnonymous]

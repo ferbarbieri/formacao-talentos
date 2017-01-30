@@ -150,3 +150,7 @@ textarea {
 .navbar-inverse .navbar-link:hover {
     color: #15a589;
 }
+
+.selecionar-curso {
+    height: 200px !important;
+}

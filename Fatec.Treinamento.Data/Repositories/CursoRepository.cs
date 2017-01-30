@@ -30,5 +30,23 @@ namespace Fatec.Treinamento.Data.Repositories
               param: new { Nome = "%" + nome + "%" }
             ).ToList();
         }
+
+        public IEnumerable<DetalhesCurso> ListarCursosDetalhes()
+        {
+            return Connection.Query<DetalhesCurso>(
+              @"SELECT
+	                c.Id,
+	                c.Nome,
+	                a.Nome as Assunto,
+	                u.Nome as Autor,
+	                c.DataCriacao,
+	                c.Classificacao
+                 FROM curso c
+                 inner join assunto a on c.IdAssunto = a.id
+                 inner join usuario u on c.IdAutor = u.Id
+                 ORDER BY c.Nome"
+            ).ToList();
+        }
+
     }
 }

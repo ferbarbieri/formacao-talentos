@@ -162,6 +162,7 @@
     </Compile>
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\RegistroUsuarioViewModel.cs" />
+    <Compile Include="Models\VincularCursosTrilhaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -219,6 +220,7 @@
     <Content Include="Views\Trilha\Criar.cshtml" />
     <Content Include="Views\Trilha\Editar.cshtml" />
     <Content Include="Views\Trilha\Excluir.cshtml" />
+    <Content Include="Views\Trilha\VincularCursos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
