@@ -12,7 +12,7 @@ namespace Fatec.Treinamento.Model
         
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O campo Nome é obrigatório.")]
+        [Required(ErrorMessage = "O campo Lalal é obrigatório.")]
         [StringLength(100, ErrorMessage = "O Nome deve ter ao menos 1 caractere.", MinimumLength = 1)]
         public string Nome { get; set; }
     }
