@@ -1,6 +1,7 @@
 ﻿using Fatec.Treinamento.Data.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,10 +75,17 @@ namespace Fatec.Treinamento.Data.Repositories
         
         public void Excluir(Assunto assunto)
         {
-            Connection.Execute(
-                "DELETE FROM Assunto WHERE Id = @Id",
-                param: new { Id = assunto.Id }
-            );
+            try
+            {
+                Connection.Execute(
+                    "DELETE FROM Assunto WHERE Id = @Id",
+                    param: new {Id = assunto.Id}
+                );
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("O assunto não pode ser removido pois existem cursos vinculados.");
+            }
         }
     }
 }

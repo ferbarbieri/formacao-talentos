@@ -152,6 +152,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminAssuntosController.cs" />
     <Compile Include="Controllers\TrilhaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -223,6 +224,16 @@
     <Content Include="Views\AdminTrilhas\Excluir.cshtml" />
     <Content Include="Views\AdminTrilhas\Index.cshtml" />
     <Content Include="Views\AdminTrilhas\VincularCursos.cshtml" />
+    <Content Include="Views\AdminAssuntos\Criar.cshtml" />
+    <Content Include="Views\AdminAssuntos\Editar.cshtml" />
+    <Content Include="Views\AdminAssuntos\Excluir.cshtml" />
+    <Content Include="Views\AdminAssuntos\Index.cshtml" />
+    <Content Include="Views\Curso\Detalhes.cshtml" />
+    <Content Include="Views\Curso\Assistir.cshtml" />
+    <Content Include="Views\Shared\ListagemCursos.cshtml" />
+    <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Curso\Assunto.cshtml" />
+    <Content Include="Views\Curso\Populares.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

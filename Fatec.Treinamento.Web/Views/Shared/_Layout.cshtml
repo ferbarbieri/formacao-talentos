@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Fatec Treinamentos</title>
     @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -63,7 +64,7 @@
                                 <ul class="dropdown-menu">
                                     <li>@Html.ActionLink("Cursos", "Index", "AdminCursos", null, new { style = "text-decoration: line-through" })</li>
                                     <li>@Html.ActionLink("Trilhas", "Index", "AdminTrilhas")</li>
-                                    <li>@Html.ActionLink("Assuntos", "Index", "AdminAssuntos", null, new { style = "text-decoration: line-through" })</li>
+                                    <li>@Html.ActionLink("Assuntos", "Index", "AdminAssuntos")</li>
                                     <li>@Html.ActionLink("Usuários", "Index", "AdminUsuarios", null, new { style = "text-decoration: line-through" })</li>
                                 </ul>
                             </li>
@@ -103,7 +104,6 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
 
     </div>
 

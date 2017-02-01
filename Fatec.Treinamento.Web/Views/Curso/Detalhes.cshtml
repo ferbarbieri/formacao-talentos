@@ -1,0 +1,67 @@
+﻿@model Fatec.Treinamento.Model.DTO.DetalhesCurso
+
+@{
+    ViewBag.Title = "Detalhes do Curso";
+}
+
+<h2>
+    @Model.Nome
+</h2>
+
+<div>
+    <hr style="margin-bottom: 30px;">
+
+    <div class="row">
+        <div class="col-lg-5">
+            Assunto: @Html.DisplayFor(modelItem => Model.Assunto)
+        </div>
+        <div class="col-lg-5">
+            @for (int i = 0; i < Model.Classificacao; i++)
+            {
+                <span class="glyphicon glyphicon-star estrela-classificacao"></span>
+            }
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-lg-5">
+            Data de Criação: @Model.DataCriacao.ToString("dd/MM/yyyy")
+
+        </div>
+        <div class="col-lg-5">
+            Autor: @Html.DisplayFor(modelItem => Model.Autor)
+        </div>
+
+    </div>
+</div>
+
+
+<div class="capitulos-container">
+    <div class="capitulos">
+        <h4>Capítulos</h4>
+        @foreach (var cap in Model.Capitulos)
+        {
+            <div class="row capitulo">
+                <div class="col-lg-7">
+                    <span class="glyphicon glyphicon-tags"> </span>
+                    <b>@cap.Nome</b> (@cap.Pontos pontos)
+                </div>
+                <div class="col-lg-5 text-right">@cap.TempoTotal</div>
+            </div>
+
+            foreach (var vid in cap.Videos)
+            {
+                <div class="row video">
+                    <div class="col-lg-7">
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        @Html.RouteLink(vid.Nome, "AssistirVideo", new RouteValueDictionary() { { "IdCurso", Model.Id }, { "IdCapitulo", cap.Id }, { "IdVideo", vid.Id } })
+                    </div>
+                    <div class="col-lg-5 text-right">@vid.DuracaoFormatada </div>
+                </div>
+            }
+        }
+
+    </div>
+</div>
+

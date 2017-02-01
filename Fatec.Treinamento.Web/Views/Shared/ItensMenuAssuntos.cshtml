@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Fatec.Treinamento.Model.DTO.CursosPorAssunto>
 
-<li>@Html.ActionLink("Todos os cursos", "Index", "Cursos")</li>
+<li>@Html.ActionLink("Todos os cursos", "Index", "Curso")</li>
 <li role="separator" class="divider"></li>
 <li class="dropdown-header">ASSUNTOS</li>
 @foreach (var item in Model)
 {
-    <li>@Html.ActionLink(item.Nome + " (" + item.TotalCursos + ")", "Assunto", "Cursos", new { Id = item.Id }, null) </li>
+    <li>@Html.ActionLink(item.Nome + " (" + item.TotalCursos + ")", "Assunto", "Curso", new { Id = item.Id }, null) </li>
 }
 

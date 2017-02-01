@@ -19,6 +19,13 @@ namespace Fatec.Treinamento.Model.DTO
         public DateTime DataCriacao { get; set; }
 
         public int Classificacao { get; set; }
-        
+
+        public IList<Capitulo> Capitulos { get; set; }
+
+        public DetalhesCurso()
+        {
+            Capitulos = new List<Capitulo>();   
+        }
+
     }
 }

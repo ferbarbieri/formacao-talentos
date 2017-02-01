@@ -88,11 +88,15 @@
     <None Include="CargaInicial\Dados\Trilha.sql" />
     <None Include="CargaInicial\Dados\Trilha_Curso.sql" />
     <None Include="CargaInicial\Dados\Usuario.sql" />
+    <Build Include="CargaInicial\Dados\Video.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="CargaInicial\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Fatec.Treinamento.DB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Fatec.Treinamento.DB.refactorlog" />
   </ItemGroup>
 </Project>

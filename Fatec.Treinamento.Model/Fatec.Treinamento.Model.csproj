@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capitulo.cs" />
     <Compile Include="DTO\CursosPorAssunto.cs" />
     <Compile Include="DTO\DetalhesCurso.cs" />
     <Compile Include="Enum\TipoPerfil.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Trilha.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Video.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

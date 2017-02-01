@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Fatec.Treinamento.Model.DTO.DetalhesCurso>
+
+@foreach (var item in Model)
+{
+    <hr style="margin-bottom: 30px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>
+                @Html.ActionLink(item.Nome, "Detalhes", "Curso", new { id = item.Id }, null)
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            Assunto: @Html.DisplayFor(modelItem => item.Assunto)
+        </div>
+        <div class="col-lg-5">
+            @for (int i = 0; i < item.Classificacao; i++)
+            {
+                <span class="glyphicon glyphicon-star estrela-classificacao"></span>
+            }
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-lg-5">
+            Data de Criação: @item.DataCriacao.ToString("dd/MM/yyyy")
+
+        </div>
+        <div class="col-lg-5">
+            Autor: @Html.DisplayFor(modelItem => item.Autor)
+        </div>
+
+    </div>
+
+}

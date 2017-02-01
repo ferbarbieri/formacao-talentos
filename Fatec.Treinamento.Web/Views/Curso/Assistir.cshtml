@@ -1,0 +1,57 @@
+﻿@model Fatec.Treinamento.Model.DTO.DetalhesCurso
+
+@{
+    ViewBag.Title = "Assistir";
+}
+
+@section styles {
+    <style>
+        body{
+            background-color: #161616;
+        }
+    </style>
+}
+
+<div class="full-width-div">
+
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@ViewBag.CodigoYoutube?rel=0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-3 capitulos-player">
+            @foreach (var cap in Model.Capitulos)
+            {
+                <div class="row capitulo">
+                    <div class="col-lg-7">
+                        <b>@cap.Nome</b> (@cap.Pontos pontos)
+                    </div>
+                    <div class="col-lg-5 text-right">@cap.TempoTotal</div>
+                </div>
+
+                foreach (var vid in cap.Videos)
+                {
+
+                    var classe = "video";
+
+                    // Verifica se é o mesmo video que está tocando:
+                    if (vid.Id == ViewBag.IdVideo)
+                    {
+                        classe = "video selecionado";
+                    }
+
+
+                    <div class="row @classe">
+                        <div class="col-lg-7">
+                            <span class="glyphicon glyphicon-play-circle"></span>
+                            @Html.RouteLink(vid.Nome, "AssistirVideo", new RouteValueDictionary() { { "IdCurso", Model.Id }, { "IdCapitulo", cap.Id }, { "IdVideo", vid.Id } })
+                        </div>
+                        <div class="col-lg-5 text-right">@vid.DuracaoFormatada </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

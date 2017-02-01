@@ -11,7 +11,13 @@ namespace Fatec.Treinamento.Data.Repositories.Interfaces
     {
         IEnumerable<DetalhesCurso> ListarCursosPorNome(string nome);
 
+        IEnumerable<DetalhesCurso> ListarCursos();
+
+        IEnumerable<DetalhesCurso> ListarCursosPorAssunto(int idAssunto);
+
         IEnumerable<DetalhesCurso> ListarCursosDetalhes();
+
+        DetalhesCurso ObterDetalhesCurso(int id);
 
     }
 }
